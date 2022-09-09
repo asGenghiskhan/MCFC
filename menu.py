@@ -11,13 +11,13 @@ while True:
         choices1 = ['classic文件转换器', 'indev文件转换器', '返回']
         c1 = choicebox("你要运行哪一个文件转换器？", "运行文件转换器", choices1)
         if c1 == choices1[0]:
-            os.system('python classic文件转换器.py')
+            import cfc #classic文件转换器
         elif c1 == choices1[1]:
-            os.system('python indev文件转换器.py')
+            import ifc #indev文件转换器
         else:
             pass
     elif c == choices[1]:
-        os.system('python options.py')
+        import options
     elif c == choices[2]:
         choices1 = ['获取MCFC版本','遇到了bug,点这里反馈','退出']
         c1 = choicebox("请选择一个选项", "菜单", choices1)
@@ -26,13 +26,12 @@ while True:
             webbrowser.open('https://github.com/asGenghiskhan/MCFC/releases')
         elif c1 == choices1[1]:
             sys.path.append("libs")
-            webbrowser.open(
-                'https://github.com/asGenghiskhan/MCFC/discussions/2')
+            webbrowser.open('https://github.com/asGenghiskhan/MCFC/discussions/2')
         else:
             pass
     elif c == choices[3]:
         cs = ["确定", "顺便做一下启动文件(.bat/.cmd)", "？？？"]
-        r = buttonbox('MCFC版本：1.0-release\nMade by As Genghis khan',
+        r = buttonbox('MCFC版本：1.0_01-release\nMade by As Genghis khan',
                       '关于MCFC', cs)
         if r == cs[1]:
             r1 = buttonbox('请选择文件类型',
